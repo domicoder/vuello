@@ -1,32 +1,42 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <v-app>
+    <Header subtitle="HI!" />
     <router-view />
-  </div>
+    <Footer />
+  </v-app>
 </template>
 
+<script>
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
+  daa: () => ({
+    //
+  }),
+};
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@mixin button-opaque-1 {
+  border-radius: 3px !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  align-items: center !important;
+  background-color: $background-btn-color-opaque !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  display: flex !important;
+  font-weight: bold !important;
+  height: $size-default-icons !important;
+  line-height: $size-default-icons !important;
+  margin: 0 4px 0 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  min-width: $size-default-icons !important;
 }
 </style>
